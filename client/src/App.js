@@ -6,27 +6,29 @@ const App = () => {
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  // 🔗 Use your hosted Render backend directly
+  const BASE_URL = 'https://whatsapp-order-app-lgw9.onrender.com';
+
   const fetchOrders = () => {
-    fetch('http://localhost:3000/orders')
+    fetch(`${BASE_URL}/orders`)
       .then((res) => res.json())
       .then((data) => {
         setOrders(data);
         setLoading(false);
       });
   };
-  
 
   useEffect(() => {
     fetchOrders();
   }, []);
 
   const deleteOrder = (id) => {
-    fetch(`http://localhost:3000/orders/${id}`, { method: 'DELETE' })
+    fetch(`${BASE_URL}/orders/${id}`, { method: 'DELETE' })
       .then(() => fetchOrders());
   };
 
   const toggleDone = (id) => {
-    fetch(`http://localhost:3000/orders/${id}/toggle`, {
+    fetch(`${BASE_URL}/orders/${id}/toggle`, {
       method: 'PUT'
     }).then(() => fetchOrders());
   };

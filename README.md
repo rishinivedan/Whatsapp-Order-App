@@ -117,5 +117,8 @@ View all WhatsApp orders as cards
 Rishi Nivedan
 Built with ❤️ to help automate WhatsApp-based order workflows for small businesses.
 
+Frontend hosted on https://vercel.com/rishinivedans-projects/v0-whatsapp-order-management
+Backend hosted on https://whatsapp-order-app-lgw9.onrender.com
+
 
 
